@@ -314,7 +314,8 @@ Accessibility is a first-class architectural requirement.
 Momentum UI components should aim to achieve:
 
 - WCAG 2.2 AA compliance at minimum wherever possible
-- WCAG AAA compliance when realistically achievable without harming usability or product goals
+- WCAG AAA compliance when realistically achievable
+  without harming usability or product goals
 
 Accessibility is NOT considered:
 

@@ -1,0 +1,22 @@
+{
+  "name": "@momentum-ui/react-storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "storybook build",
+    "lint": "eslint . --ext .ts,.tsx",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@momentum-ui/react": "workspace:*",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3"
+  }
+}

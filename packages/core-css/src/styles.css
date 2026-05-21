@@ -1,0 +1,5 @@
+@layer momentum-reset, momentum-tokens, momentum-base, momentum-utilities;
+
+:root {
+  color-scheme: dark;
+}

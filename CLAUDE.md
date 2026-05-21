@@ -8,7 +8,8 @@ Additionally review:
 
 @docs/IMPLEMENTATION_PLAN.md
 
-Do not proceed with implementation until AGENTS.md & IMPLEMENTATION_PLAN.md rules are understood and followed.
+Do not proceed with implementation until `AGENTS.md` and
+`IMPLEMENTATION_PLAN.md` rules are understood and followed.
 
 Additional Claude-specific behavior:
 
