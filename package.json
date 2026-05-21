@@ -15,6 +15,7 @@
     "format": "prettier --check .",
     "format:write": "prettier --write .",
     "lint": "turbo run lint && markdownlint-cli2 AGENTS.md CLAUDE.md \"docs/**/*.md\"",
+    "postinstall": "node ./scripts/patch-storybook-windows-cache.mjs",
     "storybook": "pnpm --filter @momentum-ui/react-storybook storybook",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck"

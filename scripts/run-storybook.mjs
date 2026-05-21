@@ -4,6 +4,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const cacheRoot = path.join(repoRoot, ".cache");
 const command = process.platform === "win32" ? "storybook.CMD" : "storybook";
 const binDir = path.join(repoRoot, "node_modules", ".bin");
 const commandPath = path.join(repoRoot, "node_modules", ".bin", command);
@@ -24,6 +25,7 @@ const result = spawnSync(commandPath, args, {
   cwd: repoRoot,
   env: {
     ...process.env,
+    CACHE_DIR: cacheRoot,
     PATH:
       process.platform === "win32"
         ? `${binDir};${process.env.PATH ?? ""}`
