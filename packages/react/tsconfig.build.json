@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "types": ["@testing-library/jest-dom", "vitest/globals"]
+  },
+  "include": ["src"]
+}

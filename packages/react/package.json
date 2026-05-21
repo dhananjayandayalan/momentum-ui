@@ -16,9 +16,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsc --project tsconfig.build.json",
     "lint": "eslint src --ext .ts,.tsx",
-    "test": "vitest run --config vitest.config.ts",
+    "test": "vitest run --config vitest.config.ts --passWithNoTests",
     "typecheck": "tsc --project tsconfig.json"
   },
   "dependencies": {

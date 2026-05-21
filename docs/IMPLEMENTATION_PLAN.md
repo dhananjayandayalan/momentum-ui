@@ -21,7 +21,8 @@ AGENTS.md
 CLAUDE.md
 ```
 
-The goal is to ensure every AI coding agent and developer behaves consistently while contributing to Momentum UI.
+The goal is to ensure every AI coding agent and developer behaves
+consistently while contributing to Momentum UI.
 
 ---
 

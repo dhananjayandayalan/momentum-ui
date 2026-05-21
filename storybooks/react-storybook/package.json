@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "storybook build",
+    "build": "node ../../scripts/run-storybook.mjs build",
     "lint": "eslint . --ext .ts,.tsx",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "node ../../scripts/run-storybook.mjs dev",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --project tsconfig.json"
   },

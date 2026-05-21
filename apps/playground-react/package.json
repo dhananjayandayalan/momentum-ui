@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
+    "build": "vite build --config ./vite.config.ts",
+    "dev": "vite --config ./vite.config.ts",
     "lint": "eslint src --ext .ts,.tsx",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --project tsconfig.json"

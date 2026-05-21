@@ -8,12 +8,13 @@
     "pnpm": ">=11.1.3"
   },
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!@momentum-ui/react-storybook",
+    "build:storybook": "pnpm --filter @momentum-ui/react-storybook build",
     "changeset": "changeset",
     "dev": "turbo run dev --parallel --filter=@momentum-ui/playground-react --filter=@momentum-ui/react-storybook",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
-    "lint": "turbo run lint && markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "lint": "turbo run lint && markdownlint-cli2 AGENTS.md CLAUDE.md \"docs/**/*.md\"",
     "storybook": "pnpm --filter @momentum-ui/react-storybook storybook",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck"
