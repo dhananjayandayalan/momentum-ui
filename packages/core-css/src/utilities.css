@@ -1,0 +1,66 @@
+@layer momentum-utilities {
+  .mu-surface {
+    background:
+      linear-gradient(180deg, rgba(19, 43, 56, 0.92), rgba(11, 29, 39, 0.96)),
+      var(--momentum-color-surface-panel);
+    border: 1px solid var(--momentum-color-border-subtle);
+    border-radius: 1rem;
+    box-shadow: var(--momentum-shadow-panel);
+  }
+
+  .mu-grid {
+    display: grid;
+    gap: var(--momentum-spacing-stack);
+  }
+
+  .mu-flow > * + * {
+    margin-block-start: var(--momentum-spacing-stack);
+  }
+
+  .mu-cluster {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--momentum-spacing-field);
+  }
+
+  .mu-label {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  .mu-metric {
+    color: var(--momentum-color-text-primary);
+    font-family: var(--momentum-typography-font-family-mono);
+    font-size: var(--momentum-typography-font-size-metric);
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: var(--momentum-typography-letter-spacing-metric);
+    line-height: var(--momentum-typography-line-height-metric);
+  }
+
+  .mu-accent-surge {
+    color: var(--momentum-color-signal-surge);
+  }
+
+  .mu-accent-warning {
+    color: var(--momentum-color-signal-fatigue-warning);
+  }
+
+  .mu-accent-danger {
+    color: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-scroll-shell {
+    max-inline-size: var(--momentum-breakpoint-ultra);
+    margin-inline: auto;
+    padding: var(--momentum-spacing-command) var(--momentum-spacing-vector);
+  }
+
+  @container (max-width: 48rem) {
+    .mu-scroll-shell {
+      padding: var(--momentum-spacing-runway) var(--momentum-spacing-stack);
+    }
+  }
+}

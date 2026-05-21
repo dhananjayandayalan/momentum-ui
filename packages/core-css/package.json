@@ -5,22 +5,27 @@
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
+  "sideEffects": [
+    "./dist/*.css"
+  ],
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles.css": "./src/styles.css"
+    "./styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist",
-    "src/styles.css"
+    "dist"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
+    "build": "tsc --project tsconfig.build.json && node ./scripts/build-assets.mjs",
     "lint": "eslint src --ext .ts",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@momentum-ui/tokens": "workspace:*"
   }
 }

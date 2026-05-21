@@ -1,0 +1,28 @@
+@layer momentum-motion {
+  :root {
+    --momentum-motion-transition-standard:
+      background-color var(--momentum-motion-duration-standard) var(--momentum-motion-easing-emphasized),
+      border-color var(--momentum-motion-duration-standard) var(--momentum-motion-easing-emphasized),
+      box-shadow var(--momentum-motion-duration-standard) var(--momentum-motion-easing-emphasized),
+      color var(--momentum-motion-duration-standard) var(--momentum-motion-easing-emphasized),
+      opacity var(--momentum-motion-duration-standard) var(--momentum-motion-easing-emphasized),
+      transform var(--momentum-motion-duration-standard) var(--momentum-motion-easing-predictive);
+  }
+
+  :where(a, button, input, select, textarea, summary) {
+    transition: var(--momentum-motion-transition-standard);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-delay: 0ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-delay: 0ms !important;
+      transition-duration: 1ms !important;
+    }
+  }
+}

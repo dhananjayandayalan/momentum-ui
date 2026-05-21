@@ -1,0 +1,70 @@
+@layer momentum-base {
+  :root {
+    background:
+      radial-gradient(circle at top, rgba(77, 195, 255, 0.12), transparent 38%),
+      linear-gradient(180deg, rgba(6, 18, 24, 0.98), rgba(11, 29, 39, 1));
+    color: var(--momentum-color-text-primary);
+    font-family: var(--momentum-typography-font-family-body);
+    font-size: var(--momentum-typography-font-size-body);
+    line-height: var(--momentum-typography-line-height-comfortable);
+  }
+
+  body {
+    background: var(--momentum-color-surface-canvas);
+    color: var(--momentum-color-text-primary);
+    font-family: inherit;
+  }
+
+  ::selection {
+    background: rgba(77, 195, 255, 0.28);
+    color: var(--momentum-color-text-primary);
+  }
+
+  :where(a) {
+    color: var(--momentum-color-signal-transition-burst);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+
+  :where(button, [role="button"], a, input, select, textarea, summary):focus-visible {
+    border-radius: 0.25rem;
+    box-shadow: var(--momentum-shadow-focus-ring);
+    outline: 2px solid transparent;
+  }
+
+  :where(hr) {
+    border: 0;
+    border-block-start: 1px solid var(--momentum-color-border-subtle);
+  }
+
+  :where(code, kbd, pre, samp) {
+    font-family: var(--momentum-typography-font-family-mono);
+  }
+
+  :where(code, kbd) {
+    color: var(--momentum-color-signal-confidence-high);
+    font-size: 0.95em;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--momentum-color-text-primary);
+    font-weight: var(--momentum-typography-font-weight-strong);
+    letter-spacing: var(--momentum-typography-letter-spacing-display);
+    line-height: var(--momentum-typography-line-height-display);
+    text-wrap: balance;
+    text-transform: uppercase;
+  }
+
+  :where(p, li, dd) {
+    color: var(--momentum-color-text-secondary);
+    max-inline-size: 68ch;
+    text-wrap: pretty;
+  }
+
+  :where(small) {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    text-transform: uppercase;
+  }
+}

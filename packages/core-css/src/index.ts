@@ -1,3 +1,3 @@
 import "./styles.css";
 
-export const coreCssStatus = "scaffolded";
+export const coreCssStatus = "foundation-ready";

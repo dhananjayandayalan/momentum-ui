@@ -1,0 +1,62 @@
+@layer momentum-reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: dark;
+    font-size: 100%;
+    hanging-punctuation: first last;
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    min-block-size: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-inline-size: 100%;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    color: inherit;
+    font: inherit;
+  }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
