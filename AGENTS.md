@@ -307,6 +307,54 @@ Use:
 markdownlint .
 ```
 
+### 11.1 Non-Obvious Change Documentation Rule
+
+If an implementation uses a non-straightforward approach, the change must
+be documented in `docs/` for developers.
+
+This rule applies only when the reasoning would be difficult to infer from
+the codebase alone.
+
+Documentation should explain:
+
+- why the approach exists
+- which files are involved
+- how a developer should work with or verify it
+- which commands are relevant
+
+Do NOT create explanation documents for routine, obvious, or low-risk
+changes.
+
+### 11.2 Current Status Tracking Rule
+
+The repository must include:
+
+```txt
+docs/CURRENT_STATUS.md
+```
+
+This file is required and must track implementation progress against:
+
+```txt
+docs/IMPLEMENTATION_PLAN.md
+```
+
+Rules:
+
+- completed phases should only state that the phase is complete
+- the currently active phase must contain detailed implementation status
+- when work moves to the next phase, detailed notes from the previous
+  phase may be removed
+- the file should reflect the real current state of the repository, not a
+  future plan
+- AI agents must update this file when phase status materially changes
+
+Purpose:
+
+- preserve development continuity across CLI agents
+- reduce repeated codebase rediscovery
+- make implementation status obvious without scanning the whole repo
+
 ### 12. Accessibility Excellence Standards
 
 Accessibility is a first-class architectural requirement.
@@ -467,4 +515,8 @@ Before implementation, AI agents MUST also read:
 
 ```txt
 docs/IMPLEMENTATION_PLAN.md
+docs/CURRENT_STATUS.md
 ```
+
+Development must continue only after these required documents have been
+checked and understood, including the current implementation status.
