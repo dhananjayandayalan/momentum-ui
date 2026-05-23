@@ -11,6 +11,7 @@
     "typecheck": "tsc --project tsconfig.json"
   },
   "dependencies": {
+    "@momentum-ui/core-css": "workspace:*",
     "@momentum-ui/react": "workspace:*",
     "react": "19.2.6",
     "react-dom": "19.2.6"

@@ -17,6 +17,7 @@
     "noUncheckedIndexedAccess": true,
     "paths": {
       "@momentum-ui/core-css": ["packages/core-css/src/index.ts"],
+      "@momentum-ui/core-css/styles.css": ["packages/core-css/src/styles.css"],
       "@momentum-ui/core-utils": ["packages/core-utils/src/index.ts"],
       "@momentum-ui/react": ["packages/react/src/index.ts"],
       "@momentum-ui/tokens": ["packages/tokens/src/index.ts"]

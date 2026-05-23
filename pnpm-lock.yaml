@@ -62,6 +62,9 @@ importers:
 
   apps/playground-react:
     dependencies:
+      '@momentum-ui/core-css':
+        specifier: workspace:*
+        version: link:../../packages/core-css
       '@momentum-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
@@ -128,6 +131,9 @@ importers:
 
   storybooks/react-storybook:
     dependencies:
+      '@momentum-ui/core-css':
+        specifier: workspace:*
+        version: link:../../packages/core-css
       '@momentum-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
