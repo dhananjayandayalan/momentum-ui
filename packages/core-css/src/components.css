@@ -1,0 +1,678 @@
+@layer momentum-components {
+  /* ── Button base ─────────────────────────────────────────── */
+  .mu-button {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--momentum-typography-font-family-body);
+    font-size: var(--momentum-typography-font-size-label);
+    font-weight: var(--momentum-typography-font-weight-medium);
+    gap: var(--momentum-spacing-compact);
+    justify-content: center;
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    line-height: 1;
+    padding: var(--momentum-spacing-field) var(--momentum-spacing-vector);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      border-color var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      box-shadow var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      color var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      filter var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      opacity var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized);
+  }
+
+  .mu-button:disabled,
+  .mu-button[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-button {
+      transition: none;
+    }
+  }
+
+  /* ── Button: primary ───────────────────────────────────── */
+  .mu-button--primary {
+    background: var(--momentum-color-signal-transition-burst);
+    border-color: var(--momentum-color-signal-transition-burst);
+    color: var(--momentum-color-text-inverse);
+  }
+
+  .mu-button--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: rgba(77, 195, 255, 0.84);
+    border-color: rgba(77, 195, 255, 0.84);
+  }
+
+  .mu-button--primary:active:not(:disabled):not([aria-disabled="true"]) {
+    background: rgba(77, 195, 255, 0.68);
+    border-color: rgba(77, 195, 255, 0.68);
+  }
+
+  /* ── Button: ghost ──────────────────────────────────────── */
+  .mu-button--ghost {
+    background: transparent;
+    border-color: var(--momentum-color-border-strong);
+    color: var(--momentum-color-text-primary);
+  }
+
+  .mu-button--ghost:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: rgba(138, 224, 255, 0.08);
+    border-color: var(--momentum-color-signal-transition-burst);
+  }
+
+  .mu-button--ghost:active:not(:disabled):not([aria-disabled="true"]) {
+    background: rgba(138, 224, 255, 0.14);
+  }
+
+  /* ── Button: danger ─────────────────────────────────────── */
+  .mu-button--danger {
+    background: rgba(255, 107, 107, 0.12);
+    border-color: var(--momentum-color-signal-pressure-danger);
+    color: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-button--danger:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: rgba(255, 107, 107, 0.22);
+  }
+
+  .mu-button--danger:active:not(:disabled):not([aria-disabled="true"]) {
+    background: rgba(255, 107, 107, 0.34);
+  }
+
+  /* ── Button: momentum ───────────────────────────────────── */
+  .mu-button--momentum {
+    background: linear-gradient(
+      135deg,
+      var(--momentum-color-signal-surge),
+      var(--momentum-color-signal-transition-burst)
+    );
+    border-color: transparent;
+    box-shadow: 0 0 16px rgba(61, 220, 151, 0.28);
+    color: var(--momentum-color-text-inverse);
+  }
+
+  .mu-button--momentum:hover:not(:disabled):not([aria-disabled="true"]) {
+    box-shadow: 0 0 28px rgba(61, 220, 151, 0.44);
+    filter: brightness(1.1);
+  }
+
+  .mu-button--momentum:active:not(:disabled):not([aria-disabled="true"]) {
+    box-shadow: 0 0 8px rgba(61, 220, 151, 0.24);
+    filter: brightness(0.92);
+  }
+
+  /* ── Button sizes ───────────────────────────────────────── */
+  .mu-button--sm {
+    font-size: var(--momentum-typography-font-size-label);
+    padding: var(--momentum-spacing-tight) var(--momentum-spacing-stack);
+  }
+
+  .mu-button--lg {
+    font-size: var(--momentum-typography-font-size-body);
+    padding: var(--momentum-spacing-stack) var(--momentum-spacing-runway);
+  }
+
+  /* ── IconButton ─────────────────────────────────────────── */
+  .mu-icon-button {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    padding: var(--momentum-spacing-field);
+    transition:
+      background var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      border-color var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      box-shadow var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      filter var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized);
+  }
+
+  .mu-icon-button:disabled,
+  .mu-icon-button[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .mu-icon-button--sm {
+    border-radius: 0.25rem;
+    padding: var(--momentum-spacing-tight);
+  }
+
+  .mu-icon-button--lg {
+    padding: var(--momentum-spacing-stack);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-icon-button {
+      transition: none;
+    }
+  }
+
+  /* ── Input ──────────────────────────────────────────────── */
+  .mu-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--momentum-spacing-tight);
+  }
+
+  .mu-input-label {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  .mu-input {
+    background: rgba(19, 43, 56, 0.64);
+    border: 1px solid var(--momentum-color-border-subtle);
+    border-radius: 0.375rem;
+    caret-color: var(--momentum-color-signal-transition-burst);
+    color: var(--momentum-color-text-primary);
+    font-family: var(--momentum-typography-font-family-body);
+    font-size: var(--momentum-typography-font-size-body);
+    padding: var(--momentum-spacing-field) var(--momentum-spacing-stack);
+    transition:
+      background var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      border-color var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized),
+      box-shadow var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized);
+    width: 100%;
+  }
+
+  .mu-input::placeholder {
+    color: var(--momentum-color-text-muted);
+    opacity: 0.64;
+  }
+
+  .mu-input:hover:not(:disabled) {
+    border-color: var(--momentum-color-border-strong);
+  }
+
+  .mu-input:focus-visible {
+    background: rgba(19, 43, 56, 0.88);
+    border-color: var(--momentum-color-border-focus);
+    box-shadow: var(--momentum-shadow-focus-ring);
+    outline: 2px solid transparent;
+  }
+
+  .mu-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.42;
+  }
+
+  .mu-input--error {
+    border-color: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-input--error:hover:not(:disabled) {
+    border-color: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-input--error:focus-visible {
+    border-color: var(--momentum-color-signal-pressure-danger);
+    box-shadow: 0 0 0 1px rgba(255, 107, 107, 0.42), 0 0 0 4px rgba(255, 107, 107, 0.14);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-input {
+      transition: none;
+    }
+  }
+
+  .mu-input-hint {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+  }
+
+  .mu-input-error-msg {
+    color: var(--momentum-color-signal-pressure-danger);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+  }
+
+  /* ── Badge ──────────────────────────────────────────────── */
+  .mu-badge {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    display: inline-flex;
+    font-size: var(--momentum-typography-font-size-label);
+    font-weight: var(--momentum-typography-font-weight-medium);
+    gap: var(--momentum-spacing-tight);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    line-height: 1;
+    padding: 0.2em 0.65em;
+    text-transform: uppercase;
+  }
+
+  .mu-badge--surge {
+    background: rgba(61, 220, 151, 0.12);
+    border-color: rgba(61, 220, 151, 0.32);
+    color: var(--momentum-color-signal-surge);
+  }
+
+  .mu-badge--warning {
+    background: rgba(247, 185, 85, 0.12);
+    border-color: rgba(247, 185, 85, 0.32);
+    color: var(--momentum-color-signal-fatigue-warning);
+  }
+
+  .mu-badge--danger {
+    background: rgba(255, 107, 107, 0.12);
+    border-color: rgba(255, 107, 107, 0.32);
+    color: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-badge--confidence {
+    background: rgba(123, 247, 212, 0.1);
+    border-color: rgba(123, 247, 212, 0.28);
+    color: var(--momentum-color-signal-confidence-high);
+  }
+
+  .mu-badge--burst {
+    background: rgba(77, 195, 255, 0.12);
+    border-color: rgba(77, 195, 255, 0.32);
+    color: var(--momentum-color-signal-transition-burst);
+  }
+
+  .mu-badge--neutral {
+    background: rgba(93, 116, 129, 0.16);
+    border-color: rgba(93, 116, 129, 0.32);
+    color: var(--momentum-color-text-muted);
+  }
+
+  .mu-badge__dot {
+    background: currentColor;
+    block-size: 0.5em;
+    border-radius: 50%;
+    display: inline-block;
+    inline-size: 0.5em;
+  }
+
+  /* ── LiveIndicator ──────────────────────────────────────── */
+  @keyframes mu-live-pulse {
+    0% {
+      opacity: 0.56;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(3);
+    }
+  }
+
+  .mu-live-indicator {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--momentum-spacing-tight);
+  }
+
+  .mu-live-indicator__dot-wrapper {
+    --mu-dot-size: 0.5rem;
+    block-size: var(--mu-dot-size);
+    display: inline-block;
+    inline-size: var(--mu-dot-size);
+    position: relative;
+  }
+
+  .mu-live-indicator__dot {
+    background: currentColor;
+    block-size: 100%;
+    border-radius: 50%;
+    display: block;
+    inline-size: 100%;
+  }
+
+  .mu-live-indicator__ring {
+    animation: mu-live-pulse 1.8s var(--momentum-motion-easing-predictive) infinite;
+    background: currentColor;
+    block-size: 100%;
+    border-radius: 50%;
+    inline-size: 100%;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .mu-live-indicator__label {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  /* Status colors */
+  .mu-live-indicator--live {
+    color: var(--momentum-color-signal-surge);
+  }
+
+  .mu-live-indicator--standby {
+    color: var(--momentum-color-signal-transition-burst);
+  }
+
+  .mu-live-indicator--idle {
+    color: var(--momentum-color-signal-fatigue-warning);
+  }
+
+  .mu-live-indicator--offline {
+    color: var(--momentum-color-text-muted);
+  }
+
+  /* No ring for idle/offline */
+  .mu-live-indicator--idle .mu-live-indicator__ring,
+  .mu-live-indicator--offline .mu-live-indicator__ring {
+    display: none;
+  }
+
+  /* Slower ring for standby */
+  .mu-live-indicator--standby .mu-live-indicator__ring {
+    animation-duration: 2.8s;
+  }
+
+  /* Sizes */
+  .mu-live-indicator--sm .mu-live-indicator__dot-wrapper {
+    --mu-dot-size: 0.375rem;
+  }
+
+  .mu-live-indicator--lg .mu-live-indicator__dot-wrapper {
+    --mu-dot-size: 0.75rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-live-indicator__ring {
+      animation: none;
+      display: none;
+    }
+  }
+
+  /* ── RealtimePulse ──────────────────────────────────────── */
+  @keyframes mu-realtime-ping {
+    0% {
+      opacity: 0.64;
+      transform: scale(0.12);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  .mu-realtime-pulse {
+    --mu-pulse-color: var(--momentum-color-signal-surge);
+    --mu-pulse-size: 3rem;
+    align-items: center;
+    block-size: var(--mu-pulse-size);
+    display: inline-flex;
+    inline-size: var(--mu-pulse-size);
+    justify-content: center;
+    position: relative;
+  }
+
+  .mu-realtime-pulse__ring {
+    animation: mu-realtime-ping 2.2s var(--momentum-motion-easing-predictive) infinite;
+    block-size: 100%;
+    border: 1.5px solid var(--mu-pulse-color);
+    border-radius: 50%;
+    inline-size: 100%;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .mu-realtime-pulse__ring:nth-child(2) {
+    animation-delay: 0.64s;
+  }
+
+  .mu-realtime-pulse__ring:nth-child(3) {
+    animation-delay: 1.28s;
+  }
+
+  .mu-realtime-pulse__core {
+    background: var(--mu-pulse-color);
+    block-size: 0.5rem;
+    border-radius: 50%;
+    inline-size: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Tones */
+  .mu-realtime-pulse--surge {
+    --mu-pulse-color: var(--momentum-color-signal-surge);
+  }
+
+  .mu-realtime-pulse--warning {
+    --mu-pulse-color: var(--momentum-color-signal-fatigue-warning);
+  }
+
+  .mu-realtime-pulse--danger {
+    --mu-pulse-color: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-realtime-pulse--burst {
+    --mu-pulse-color: var(--momentum-color-signal-transition-burst);
+  }
+
+  .mu-realtime-pulse--confidence {
+    --mu-pulse-color: var(--momentum-color-signal-confidence-high);
+  }
+
+  /* Intensity: low = 1 ring, medium = 2 rings (default), high = 3 rings */
+  .mu-realtime-pulse--low .mu-realtime-pulse__ring:nth-child(n + 2) {
+    display: none;
+  }
+
+  .mu-realtime-pulse--medium .mu-realtime-pulse__ring:nth-child(3) {
+    display: none;
+  }
+
+  .mu-realtime-pulse--high .mu-realtime-pulse__ring {
+    animation-duration: 1.4s;
+  }
+
+  .mu-realtime-pulse--high .mu-realtime-pulse__ring:nth-child(2) {
+    animation-delay: 0.42s;
+  }
+
+  .mu-realtime-pulse--high .mu-realtime-pulse__ring:nth-child(3) {
+    animation-delay: 0.84s;
+  }
+
+  /* Sizes */
+  .mu-realtime-pulse--sm {
+    --mu-pulse-size: 2rem;
+  }
+
+  .mu-realtime-pulse--sm .mu-realtime-pulse__core {
+    block-size: 0.375rem;
+    inline-size: 0.375rem;
+  }
+
+  .mu-realtime-pulse--lg {
+    --mu-pulse-size: 4.5rem;
+  }
+
+  .mu-realtime-pulse--lg .mu-realtime-pulse__core {
+    block-size: 0.75rem;
+    inline-size: 0.75rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-realtime-pulse__ring {
+      animation: none;
+      display: none;
+    }
+  }
+
+  /* ── MomentumBar ────────────────────────────────────────── */
+  .mu-momentum-bar {
+    display: grid;
+    gap: var(--momentum-spacing-tight);
+  }
+
+  .mu-momentum-bar__header {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mu-momentum-bar__label {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  .mu-momentum-bar__value {
+    color: var(--momentum-color-text-primary);
+    font-family: var(--momentum-typography-font-family-mono);
+    font-size: var(--momentum-typography-font-size-label);
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: var(--momentum-typography-letter-spacing-metric);
+  }
+
+  .mu-momentum-bar__track {
+    background: rgba(6, 18, 24, 0.72);
+    border: 1px solid var(--momentum-color-border-subtle);
+    border-radius: 9999px;
+    block-size: 0.375rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .mu-momentum-bar__fill {
+    block-size: 100%;
+    border-radius: inherit;
+    transition: width var(--momentum-motion-duration-standard) var(--momentum-motion-easing-emphasized);
+  }
+
+  /* Tone fills */
+  .mu-momentum-bar--surge .mu-momentum-bar__fill {
+    background: linear-gradient(
+      90deg,
+      rgba(61, 220, 151, 0.56),
+      var(--momentum-color-signal-surge)
+    );
+    box-shadow: 2px 0 10px rgba(61, 220, 151, 0.5);
+  }
+
+  .mu-momentum-bar--warning .mu-momentum-bar__fill {
+    background: linear-gradient(
+      90deg,
+      rgba(247, 185, 85, 0.56),
+      var(--momentum-color-signal-fatigue-warning)
+    );
+    box-shadow: 2px 0 10px rgba(247, 185, 85, 0.5);
+  }
+
+  .mu-momentum-bar--danger .mu-momentum-bar__fill {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 107, 107, 0.56),
+      var(--momentum-color-signal-pressure-danger)
+    );
+    box-shadow: 2px 0 10px rgba(255, 107, 107, 0.5);
+  }
+
+  .mu-momentum-bar--confidence .mu-momentum-bar__fill {
+    background: linear-gradient(
+      90deg,
+      rgba(123, 247, 212, 0.48),
+      var(--momentum-color-signal-confidence-high)
+    );
+    box-shadow: 2px 0 10px rgba(123, 247, 212, 0.4);
+  }
+
+  .mu-momentum-bar--burst .mu-momentum-bar__fill {
+    background: linear-gradient(
+      90deg,
+      rgba(77, 195, 255, 0.56),
+      var(--momentum-color-signal-transition-burst)
+    );
+    box-shadow: 2px 0 10px rgba(77, 195, 255, 0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-momentum-bar__fill {
+      transition: none;
+    }
+  }
+
+  /* ── PressureMeter ──────────────────────────────────────── */
+  .mu-pressure-meter {
+    display: grid;
+    gap: var(--momentum-spacing-tight);
+  }
+
+  .mu-pressure-meter__header {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mu-pressure-meter__label {
+    color: var(--momentum-color-text-muted);
+    font-size: var(--momentum-typography-font-size-label);
+    letter-spacing: var(--momentum-typography-letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  .mu-pressure-meter__value {
+    color: var(--momentum-color-text-primary);
+    font-family: var(--momentum-typography-font-family-mono);
+    font-size: var(--momentum-typography-font-size-label);
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: var(--momentum-typography-letter-spacing-metric);
+  }
+
+  .mu-pressure-meter__segments {
+    display: flex;
+    gap: 2px;
+  }
+
+  .mu-pressure-meter__segment {
+    block-size: 1.25rem;
+    border-radius: 2px;
+    flex: 1;
+    opacity: 0.16;
+    transition: opacity var(--momentum-motion-duration-quick) var(--momentum-motion-easing-emphasized);
+  }
+
+  .mu-pressure-meter__segment[data-active="true"] {
+    opacity: 1;
+  }
+
+  .mu-pressure-meter__segment[data-zone="nominal"] {
+    background: var(--momentum-color-signal-surge);
+  }
+
+  .mu-pressure-meter__segment[data-zone="warning"] {
+    background: var(--momentum-color-signal-fatigue-warning);
+  }
+
+  .mu-pressure-meter__segment[data-zone="danger"] {
+    background: var(--momentum-color-signal-pressure-danger);
+  }
+
+  .mu-pressure-meter__segment[data-zone="critical"] {
+    background: var(--momentum-color-signal-pressure-danger);
+    filter: brightness(1.28);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mu-pressure-meter__segment {
+      transition: none;
+    }
+  }
+}

@@ -1,7 +1,8 @@
-@layer momentum-reset, momentum-tokens, momentum-base, momentum-motion, momentum-utilities;
+@layer momentum-reset, momentum-tokens, momentum-base, momentum-motion, momentum-utilities, momentum-components;
 
 @import "@momentum-ui/tokens/tokens.css";
 @import "./reset.css";
 @import "./base.css";
 @import "./motion.css";
 @import "./utilities.css";
+@import "./components.css";

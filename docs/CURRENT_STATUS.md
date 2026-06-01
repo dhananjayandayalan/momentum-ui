@@ -6,73 +6,89 @@ Phase complete.
 
 ## Phase 5 - Core React Components
 
+Phase complete.
+
+## Phase 6 - Realtime Components
+
+Phase complete.
+
+## Phase 7 - Tactical Identity
+
+Phase complete.
+
+## Phase 8 - Storybook and Documentation
+
 Current active phase.
 
 ### Planned Scope
 
 The implementation plan defines this phase as:
 
-- `Surface`
-- `TacticalCard`
-- `Button`
-- `IconButton`
-- `Input`
-- `Badge`
+- installation documentation
+- usage documentation
+- accessibility documentation
+- variants documentation
+- tokens documentation
+- motion documentation
+- contribution workflow documentation
 
 ### Current Repository State
 
-Phase 4 foundations are now implemented and validated:
+Phase 7 tactical identity components are now implemented and validated:
 
-- `Text`
-- `Heading`
-- `MetricText`
-- `TacticalNumber`
-- `Icon`
+- `MomentumBar`
+- `PressureMeter`
 
 Current behavior:
 
-- `packages/react/src/index.ts` exports the Phase 4 foundation set
-- Storybook preview and the React playground now load `@momentum-ui/core-css`
-- the placeholder story has been replaced with foundation stories
-- foundational component tests have been added in `packages/react/src/index.test.tsx`
-- root validation is green for `pnpm lint`, `pnpm typecheck`, `pnpm test`,
+- Both components are exported from `packages/react/src/index.ts`
+- CSS for both components (fill gradients, segment zone colors, transitions)
+  lives in `packages/core-css/src/components.css`
+- `MomentumBar` auto-derives tone from value percentage when no explicit
+  tone is passed (confidence → surge → warning → danger as value climbs)
+- `PressureMeter` segments use `data-zone` attribute for zone-based coloring
+  and `data-active` to control opacity; thresholds are customisable
+- Both expose `role="meter"` with `aria-valuemin`, `aria-valuemax`,
+  `aria-valuenow`, and `aria-valuetext`
+- `prefers-reduced-motion` support: fill transition and segment opacity
+  transition are disabled when reduced motion is preferred
+- Storybook stories are in
+  `storybooks/react-storybook/stories/tactical.stories.tsx`
+- Tests: 46 total (5 foundations + 15 primitives + 12 realtime + 14 tactical),
+  all passing
+- Root validation is green for `pnpm lint`, `pnpm typecheck`, `pnpm test`,
   `pnpm build`, and `pnpm build:storybook`
 
-### What Is Ready For This Phase
+### Full Component Inventory
 
-The following prerequisite layers are already implemented:
+All MVP components from phases 4–7 are implemented:
 
-- repository tooling and workspace setup
-- token source and emitted token assets
-- core CSS foundation and emitted stylesheet assets
-- React package build, test, and typecheck wiring
-- Storybook dev and static build workflow
-- playground dev and build workflow
+- **Phase 4 — Foundations**: Text, Heading, MetricText, TacticalNumber, Icon
+- **Phase 5 — Core Primitives**: Surface, TacticalCard, Button, IconButton,
+  Input, Badge
+- **Phase 6 — Realtime**: LiveIndicator, RealtimePulse
+- **Phase 7 — Tactical Identity**: MomentumBar, PressureMeter
 
 ### What Still Needs To Be Implemented
 
-This phase still needs:
+Phase 8 documentation work:
 
-- core primitive component source files for Phase 5
-- public exports for the new core primitive components
-- component tests for interactive and accessibility behavior
-- Storybook stories covering variants, states, and usage examples
-- APIs aligned with the established Phase 4 typography and metric foundations
+- `docs/` content covering installation, usage, accessibility, token
+  reference, motion guidelines, and contribution workflow
+- Storybook stories may need additional MDX documentation pages or
+  notes expanded per component
 
 ### Suggested Start Points
 
 A developer starting this phase should begin with:
 
-- `packages/react/src/index.ts`
-- `packages/react/src/components/`
-- `packages/react/src/index.test.tsx`
-- `apps/playground-react/src/App.tsx`
-- `storybooks/react-storybook/stories/`
+- `docs/` directory
+- `storybooks/react-storybook/stories/` (for MDX doc pages if used)
+- `AGENTS.md` section 11 for documentation rules
 
 ### Validation Expectations For This Phase
 
-At minimum, work in this phase should continue to keep these commands
-green:
+At minimum, work in this phase should continue to keep these commands green:
 
 ```bash
 pnpm lint
